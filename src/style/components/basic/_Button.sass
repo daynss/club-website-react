@@ -1,0 +1,30 @@
+.button
+  font-size: $font-s
+  color: $colorWhite
+  @include flexbox()
+  @include border(none, 2px)
+  @include vertical-padding(0.5rem)
+  @include horizontal-padding(1rem)
+  @include align-items(center)
+  &-primary
+    background-color: $colorGreen
+  &-danger
+    background-color: $colorRed
+  &-ghost
+    background-color: transparent
+    color: $colorGreen
+    padding-left: 0
+
+  svg
+    margin-left: 0.5rem
+    width: 18px
+    height: 18px
+
+  &:hover
+    opacity: 0.8
+
+  @include breakpoint(l)
+    font-size: $font-xs
+    svg
+      height: 16px
+      width: 16px

@@ -1,0 +1,28 @@
+.link-button
+    font-size: $font-s
+    color: $colorWhite
+    @include flexbox()
+    @include border(none, 2px)
+    @include vertical-padding(0.5rem)
+    @include horizontal-padding(1rem)
+    @include align-items(center)
+    width: fit-content
+    &-primary
+        background-color: $colorGreen
+    &-ghost
+        color: $colorGreen
+        background-color: transparent
+        padding-left: 0
+    &:hover
+        opacity: 0.8
+    &.icon-right
+        svg
+            margin-left: 0.5rem
+    &.icon-left
+        svg
+            margin-right: 0.5rem
+
+    @include breakpoint(l)
+        font-size: $font-xs
+        svg
+            margin-top: 2px

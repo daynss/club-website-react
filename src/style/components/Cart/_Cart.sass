@@ -1,0 +1,102 @@
+.cart
+    padding-top: 8rem
+    width: 80%
+    min-height: calc(100vh - 15rem)
+    @include centering-margin()
+    @include breakpoint(l)
+        width: 90%
+    .cart-program-link-section
+        @include vertical-padding(1rem, 0)
+    .cart-empty
+        @include flexbox()
+        @include flex-direction(column)
+        @include align-items(flex-start)
+        h3
+            color: $colorGreen
+    .cart-items
+        @include flexbox()
+        @include vertical-padding(2rem)
+        @include breakpoint(m)
+            @include flex-direction(column)
+            @include align-items(center)
+
+        .cart-list
+            width: 50%
+            @include breakpoint(m)
+                width: 100%
+
+            .cart-list-item
+                margin-bottom: 2rem
+                background-color: $colorGrey
+                @include border(1px solid $colorLightGrey, 10px)
+                max-width: 35rem
+                @include breakpoint(m)
+                    width: 100%
+                    max-width: none
+
+                .cart-list-item-content
+                    text-align: left
+                    @include vertical-padding(1rem)
+                    @include horizontal-padding(1rem)
+                    @include flexbox()
+                    @include justify-content(space-between)
+                    @include breakpoint(l)
+                        font-size: $font-xs
+                    h2
+                        margin-top: 0
+                        font-size: 1.2rem
+                        &:hover
+                            opacity: 0.6
+                        @include breakpoint(l)
+                            font-size: $font-s
+                    .cart-list-item-event
+                        width: 70%
+                    .cart-list-item-actions
+                        width: 10rem
+                        position: relative
+                        .number-selector
+                            width: 4rem
+                            position: absolute
+                            top: 0
+                            right: 0
+                        .button
+                            position: absolute
+                            bottom: 0
+                            right: 0
+                    @include breakpoint(s)
+                        ul
+                            display: none
+
+        .cart-summary
+            width: 45%
+            height: fit-content
+            text-align: left
+            @include horizontal-padding(1rem)
+            @include vertical-padding(1rem)
+            @include border(1px solid $colorLightGrey, 10px)
+            max-width: 35rem
+            margin-left: 2rem
+            background-color: $colorGrey
+            position: relative
+
+            h2
+                margin-top: 0
+                color: $colorGreen
+            .cart-summary-total
+                font-weight: bold
+                margin-bottom: 2rem
+                .cart-total-items-label,
+                .cart-total-price-label
+                    font-weight: bold
+                    color: $colorGreen
+            .link-button
+                position: absolute
+                right: 1rem
+                bottom: 1rem
+
+            @include breakpoint(m)
+                width: 100%
+                margin-left: 0
+                max-width: none
+                h2
+                    font-size: $font-m

@@ -1,0 +1,47 @@
+@mixin centering-margin($top: 0, $bottom: 0)
+  margin: $top auto $bottom
+
+@mixin horizontal-padding($left, $right: $left)
+  padding-left: $left
+  padding-right: $right
+
+@mixin vertical-padding($top, $bottom: $top)
+  padding-top: $top
+  padding-bottom: $bottom
+
+@mixin flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+@mixin justify-content($justify)
+  -webkit-justify-content: $justify
+  -moz-justify-content: $justify
+  -ms-justify-content: $justify
+  justify-content: $justify
+  -ms-flex-pack: $justify
+
+@mixin align-items($align)
+  -webkit-align-items: $align
+  -moz-align-items: $align
+  -ms-align-items: $align
+  align-items: $align
+
+@mixin flex-direction($direction)
+  -webkit-flex-direction: $direction
+  -moz-flex-direction: $direction
+  -ms-flex-direction: $direction
+  flex-direction: $direction
+
+@mixin flex-wrap($wrap)
+  -webkit-flex-wrap: $wrap
+  -moz-flex-wrap: $wrap
+  -ms-flex-wrap: $wrap
+  flex-wrap: $wrap
+
+@mixin box-sizing($box-model)
+  -webkit-box-sizing: $box-model
+  -moz-box-sizing: $box-model
+  box-sizing: $box-model

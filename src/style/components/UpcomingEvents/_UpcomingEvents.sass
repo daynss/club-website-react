@@ -1,0 +1,60 @@
+.upcomingEvents
+  width: 90%
+  @include centering-margin()
+  @include flexbox()
+  @include breakpoint(m)
+    width: 70%
+    @include centering-margin()
+    @include flex-direction(column)
+    @include align-items(center)
+
+  @include breakpoint(s)
+    width: 90%
+
+  .upcomingEvent
+    width: 30%
+    @include breakpoint(m)
+      width: 100%
+      margin-bottom: 1.5rem
+
+    &:not(:last-child)
+      margin-right: 5%
+    .upcoming-img
+      width: 100%
+      overflow: hidden
+      line-height: 0
+      @include border(1px solid $colorLightGrey, 10px 10px 0 0)
+      img
+        width: 100%
+        height: 100%
+      @include breakpoint(m)
+        height: auto
+
+    .upcoming-body
+      width: 100%
+      text-align: center
+      background-color: $colorGrey
+      @include border(1px solid $colorLightGrey, 0 0 10px 10px)
+      @include vertical-padding(0, 0.5rem)
+      @include horizontal-padding(0.5rem)
+
+      .upcoming-body-text
+        @include flexbox()
+        @include flex-direction(column)
+        @include align-items(center)
+        h3
+          font-size: $font-m
+          @include breakpoint(l)
+            font-size: $font-s
+          @include breakpoint(m)
+            font-size: $font-s
+          @include breakpoint(s)
+            font-size: $font-xs
+        p
+          font-size: $font-s
+          margin-top: 0
+          margin-bottom: 0.6rem
+          @include breakpoint(l)
+            font-size: $font-xs
+          @include breakpoint(m)
+            font-size: $font-xs

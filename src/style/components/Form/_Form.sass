@@ -1,0 +1,27 @@
+.form-item
+  @include flexbox()
+  @include flex-direction(column)
+
+  > input,textarea
+    outline: none
+    @include border(none, 2px)
+    @include horizontal-padding(5px)
+    color: $colorGrey
+
+  .form-item-header
+    @include flexbox()
+    @include justify-content(space-between)
+    @include align-items(baseline)
+
+    .form-item-label
+      color: $colorWhite
+      text-align: left
+      @include vertical-padding(1rem, 0)
+
+    .form-field-error
+      color: $colorRed
+    @include breakpoint(m)
+      font-size: $font-xs
+
+  .invalid-form-input
+    @include border(1px solid $colorRed, 2px)
