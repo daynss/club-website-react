@@ -6,7 +6,7 @@ const Program = () => {
   const eventCards = events.map((evt) => <EventCard key={evt.id} evt={evt} />);
   return (
     <div className="program-outline">
-      <h2>August 2022</h2>
+      <h2>August 2025</h2>
       {eventCards}
     </div>
   );

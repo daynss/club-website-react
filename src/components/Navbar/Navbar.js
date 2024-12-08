@@ -24,12 +24,13 @@ const Navbar = ({ cart }) => {
 
   return (
   <>
-    <nav className="navbar">
+    <nav className="navbar" data-test="navbar">
       <div className="navbar-container">
-        <div className="navbar-responsive">
+        <div className="navbar-responsive" data-test="navbar-responsive">
           <div className="logo">
             <Link
               className="nav-link"
+              data-test="navbar-logo"
               to="/"
               onClick={mobileMenuVisible ? handleClick : null}
             >
@@ -40,6 +41,7 @@ const Navbar = ({ cart }) => {
             <Link
               className="checkout-link"
               activeClassName="active"
+              data-test="navbar-link-cart-mobile"
               onClick={mobileMenuVisible ? handleClick : null}
               to="/cart"
             >
@@ -49,6 +51,7 @@ const Navbar = ({ cart }) => {
 
             <div
               onClick={handleClick}
+              data-test="navbar-menu-icon"
               className={`menu-icon ${mobileMenuVisible ? "cross" : ""}`}
             >
               <span />
@@ -66,6 +69,7 @@ const Navbar = ({ cart }) => {
                 className="nav-link"
                 exact
                 activeClassName="active"
+                data-test="navbar-link-about"
                 to="/"
                 onClick={mobileMenuVisible ? handleClick : null}
               >
@@ -76,6 +80,7 @@ const Navbar = ({ cart }) => {
               <Link
                 className="nav-link"
                 activeClassName="active"
+                data-test="navbar-link-program"
                 to="/program"
                 onClick={mobileMenuVisible ? handleClick : null}
               >
@@ -86,6 +91,7 @@ const Navbar = ({ cart }) => {
               <Link
                 className="nav-link"
                 activeClassName="active"
+                data-test="navbar-link-contact"
                 to="/contact"
                 onClick={mobileMenuVisible ? handleClick : null}
               >
@@ -96,6 +102,7 @@ const Navbar = ({ cart }) => {
               <Link
                 className="nav-link checkout-link"
                 activeClassName="active"
+                data-test="navbar-link-cart"
                 onClick={mobileMenuVisible ? handleClick : null}
                 to="/cart"
               >

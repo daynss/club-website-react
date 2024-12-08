@@ -1,0 +1,9 @@
+{
+  "navigationItems": [
+   {"id": "navbar-logo", "text": "Imaginarium Club", "url": "/"},
+   {"id": "navbar-link-about", "text": "About", "url": "/"},
+   {"id": "navbar-link-program", "text": "Program", "url": "/program"},
+   {"id": "navbar-link-contact", "text": "Contact", "url": "/contact"},
+   {"id": "navbar-link-cart", "mobileId": "navbar-link-cart-mobile", "text": "Cart(0)", "mobileText": "(0)", "url": "/cart"}
+  ]
+}
