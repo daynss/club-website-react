@@ -717,15 +717,14 @@
 }
 .navbar .navbar-container .navbar-responsive .nav-icons .checkout-link {
   display: none;
+  color: #FF5F59;
 }
 .navbar .navbar-container .navbar-responsive .nav-icons .checkout-link span {
   font-size: 1.5rem;
   padding-left: 0.25rem;
   font-weight: bold;
-  color: #FF5F59;
 }
 .navbar .navbar-container .navbar-responsive .nav-icons .checkout-link svg {
-  color: #FF5F59;
   width: 1.35rem;
   height: 1.35rem;
 }
@@ -824,14 +823,13 @@
   -moz-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  color: #FF5F59;
 }
 .navbar .navbar-container .navbar-links .nav-link.checkout-link span {
   padding-left: 0.25rem;
   font-weight: bold;
-  color: #FF5F59;
 }
 .navbar .navbar-container .navbar-links .nav-link.checkout-link svg {
-  color: #FF5F59;
   width: 1.35rem;
   height: 1.35rem;
 }
