@@ -20,7 +20,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
     >
-      <span>{label} </span>
+      <span>{label}</span>
       {renderIcon}
     </button>
   );
