@@ -11,9 +11,9 @@ const FormFieldHeader = ({label, error}) =>
         <Error value={error}/>
     </div>;
 
-const renderInputField = ({input, label = '', type = "text", meta}) => {
+const renderInputField = ({input, label = '', type = "text", dataTest, meta}) => {
     return (
-        <div className="form-item">
+        <div className="form-item" data-test={dataTest}>
             <FormFieldHeader label={label}
                              error={isError(meta) ? meta.error : null}/>
             <input className={isError(meta) ? "invalid-form-input" : null}
@@ -23,9 +23,9 @@ const renderInputField = ({input, label = '', type = "text", meta}) => {
     );
 };
 
-const renderTextAreaField = ({input, label = '', rows = "10", meta}) => {
+const renderTextAreaField = ({input, label = '', dataTest, rows = "10", meta}) => {
     return (
-        <div className="form-item">
+        <div className="form-item" data-test={dataTest}>
             <FormFieldHeader label={label}
                              error={isError(meta) ? meta.error : null}/>
             <textarea className={isError(meta) ? "invalid-form-input" : null}

@@ -23,6 +23,8 @@ const validate = ({ email, subject, message }) => {
   
     if (empty(message)) {
       errors.message = "Required";
+    } else if (minLength(message)) {
+      errors.message = "Must be more than 2 characters";
     }
   
     return errors;
@@ -36,7 +38,7 @@ const Contact = () => {
         <div className="contact">
             <div className="contact-wrapper">
             {submitSucceeded ? (
-                <div className="contact-form-success">
+                <div className="contact-form-success" data-test="contact-form-success">
                 <p>Thank you for your message!</p>
                 <p>We will get in touch soon.</p>
                 </div>
@@ -46,13 +48,13 @@ const Contact = () => {
                 validate={values => validate(values)}
                 >
                     {({handleSubmit, pristine, form, submitting}) => (
-                        <form className="contact-form" onSubmit={handleSubmit}>
-                            <FormInputField name="email" type="email" label="Email" />
-                            <FormInputField name="subject" type="text" label="Subject" />
-                            <FormTextArea name="message" label="Your message" />
+                        <form className="contact-form" onSubmit={handleSubmit} data-test="contact-form">
+                            <FormInputField name="email" type="email" label="Email" dataTest="contact-form-email" />
+                            <FormInputField name="subject" type="text" label="Subject" dataTest="contact-form-subject" />
+                            <FormTextArea name="message" label="Your message" dataTest="contact-form-textarea"/>
 
                             <Divider />
-                            {submitting ? <Spinner /> : <Button type="submit" label="Send" />}
+                            {submitting ? <Spinner /> : <Button type="submit" label="Send"/>}
                             <Divider />
                         </form>
                     )}
