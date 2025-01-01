@@ -21,7 +21,7 @@ const ProgramDetail = ({ addToCart }) => {
 
   return (
     <>
-      <div className="program-detail">
+      <div className="program-detail" data-test="event-detail">
         <div className="program-detail-header">
           <h2>{displayEvent.title}</h2>
           <h4>{displayEvent.category}</h4>

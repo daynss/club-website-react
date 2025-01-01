@@ -14,24 +14,25 @@ const CartItem = ({ cartItem, removeFromCart, changeQuantity }) => {
   const [itemQuantity, setItemQuantity] = useState(qty);
 
   const changeQuantityHandler = (e) => {
+    if(e.target.value < 1 || e.target.value > 100) return;
     setItemQuantity(e.target.value);
     changeQuantity(id, Number(e.target.value));
   };
 
   return (
-    <div key={id} className="cart-list-item">
+    <div key={id} className="cart-list-item" data-test="cart-item">
       <div className="cart-list-item-content">
         <div className="cart-list-item-event">
           <Link to={`/detail/${id}`}>
             <h2>{title}</h2>{" "}
           </Link>
-          <span>
+          <span data-test="cart-item-when">
             {day}, {date} {time ? "at " + time : " "}
           </span>
           <Divider />
           <Artist artists={artist} category={category_id} inline />
           <Divider />
-          <span>{entry} &euro; </span>
+          <span data-test="cart-item-price">{entry} &euro;</span>
         </div>
         <div className="cart-list-item-actions">
           <NumberSelector

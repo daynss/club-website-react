@@ -25,7 +25,7 @@ const Cart = ({ cart: { cartItems } }) => {
 
   return (
     <div className="cart">
-      <div className="cart-program-link-section">
+      <div className="cart-program-link-section" data-test="cart-back-to-program-button">
         <LinkButton
           label="Back to program outline"
           href={`/program`}
@@ -44,15 +44,15 @@ const Cart = ({ cart: { cartItems } }) => {
               <CartItem key={item.id} cartItem={item} />
             ))}
           </div>
-          <div className="cart-summary">
+          <div className="cart-summary" data-test="cart-summary">
             <h2>Cart Summary</h2>
             <div className="cart-summary-total">
-              <span>
-                <span className="cart-total-items-label">Total:</span>{" "}
-                {totalItems} items{" "}
+              <span data-test="cart-total-items">
+                <span className="cart-total-items-label" >Total:</span>{" "}
+                {totalItems} items
               </span>
               <Divider />
-              <span>
+              <span data-test="cart-total-price">
                 <span className="cart-total-price-label">Price:</span>{" "}
                 {totalPrice} &euro;
               </span>

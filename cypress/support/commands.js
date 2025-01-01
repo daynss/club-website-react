@@ -65,3 +65,65 @@ Cypress.Commands.add('verifyFormTextArea', {prevSubject: true}, ($el, $text, $na
         cy.wrap($el).find('span').should('be.empty');
     }
 });
+
+Cypress.Commands.add("addItemToCart", (item) => {
+    cy.getTestSelector("event-card").each(($el) => {
+        cy.wrap($el).find('h2').then($heading => {
+            if ($heading.text() === item.name) {
+                cy.getTestSelector("navbar-link-cart").then($cart => {
+                let currentCartItemTotal = +$cart.text().slice(5,6);
+                cy.wrap($el).find('button.button-primary').contains('Add to Cart').click();
+                cy.getTestSelector("navbar-link-cart").should('include.text', `${currentCartItemTotal + 1}`);
+                currentCartItemTotal = currentCartItemTotal + 1;
+                });
+            }
+        });
+    });
+  });
+
+Cypress.Commands.add("addItemToCartFromDetailedView", (item) => {
+    cy.getTestSelector("event-detail").then($el => {
+        cy.getTestSelector("navbar-link-cart").then($cart => {
+        let currentCartItemTotal = +$cart.text().slice(5,6);
+        cy.wrap($el).find('button.button-primary').contains('Add to Cart').click();
+        cy.getTestSelector("navbar-link-cart").should('include.text', `${currentCartItemTotal + 1}`);
+        currentCartItemTotal = currentCartItemTotal + 1;
+        });
+    });
+  });
+  
+Cypress.Commands.add("verifyItemsInCart", (item, amount = '1') => {
+    cy.getTestSelector("cart-item").contains(item.name)
+    .should('have.length', 1)
+    .parent().parent().as('item');
+
+    cy.get("@item").then($el => {
+        cy.wrap($el).find('h2').then($heading => {
+            expect($heading.text()).to.be.equal(item.name);
+        });
+        cy.wrap($el).find('span[data-test="cart-item-when"]').then($when => {
+            expect($when.text()).to.be.equal(item.when);
+        });
+        cy.wrap($el).find('span[data-test="event-artist"]').then($artist => {
+            expect($artist.text()).to.be.equal(item.artist);
+        });
+        cy.wrap($el).find('[data-test="cart-item-price"]').then($price => {
+            expect($price.text()).to.be.equal(`${item.price} €`);
+        });
+        cy.wrap($el).find('input').then($input => {
+            expect($input.val()).to.be.equal(amount);
+        });
+        cy.wrap($el).find('button.button-danger').should('be.visible').and('not.be.disabled').and('have.text', "Remove"); 
+    });
+});
+
+Cypress.Commands.add("changeItemQuantityInCart", { prevSubject: true}, (item, value) => {
+    cy.wrap(item).find('input').type(`{selectall}${value}`);
+});
+
+Cypress.Commands.add("verifyCartSummary", (totalAmount, totalPrice) => {
+    cy.getTestSelector('cart-total-items').should('have.text', `Total: ${totalAmount} items`);
+    cy.getTestSelector('cart-total-price').should('have.text', `Price: ${totalPrice} €`);
+});
+
+    

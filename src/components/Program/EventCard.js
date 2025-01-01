@@ -11,7 +11,7 @@ const EventCard = ({ evt, addToCart }) => {
   const { id, title, img, day, date, time, entry, category_id } = evt;
 
   return (
-    <div className="event-card">
+    <div className="event-card" data-test="event-card">
       <div className={`event-image ${img ? "" : "empty"}`}>
         {category_id !== "private_event" && (
           <Link to={`/detail/${id}`}>
