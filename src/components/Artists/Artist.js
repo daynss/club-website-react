@@ -6,13 +6,13 @@ const Artist = ({ artists, category, inline = false }) => {
     <div>
       {artists &&
         artists.map((art, idx) => (
-          <span key={idx}>{`${art}${
+          <span key={idx} data-test="event-artist">{`${art}${
             idx !== artists.length - 1 ? ", " : ""
           }`}</span>
         ))}
     </div>
   ) : (
-    <ul style={{ textAlign: "left" }}>
+    <ul style={{ textAlign: "left" }} data-test="event-artist">
       {artists && artists.map((artist, idx) => <li key={idx}>{artist}</li>)}
     </ul>
   );

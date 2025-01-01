@@ -4,8 +4,8 @@ describe('Navigation Bar Test Suite', function() {
 
     this.baseUrl = Cypress.config('baseUrl');
 
-    cy.fixture("navbar").then((navbar) => {
-      this.navItems = navbar.navigationItems;
+    cy.fixture("navbar").then((data) => {
+      this.navItems = data.navigationItems;
     });
   });
 

@@ -1,0 +1,13 @@
+{
+    "events_1": [
+        {"name": "Breakbeatin' vol.10", "price": 16, "when": "Friday, 5 August 2025 at 21:00", "artist": "Potential, Cardiac, Arrest"},
+        {"name": "Indie Blabber vol.18", "price": 12, "when": "Saturday, 13 August 2025 at 21:00", "artist": "Alone on the Hill, Youth Ferry, The Predators"},
+        {"name": "Yet Another Techno Party", "price": 12, "when": "Friday, 26 August 2025 at 21:00", "artist": "Mr. Medical, Side Effects"}
+    ],
+
+    "events_2": [
+        {"name": "Retro Party", "price": 8, "when": "Friday, 12 August 2025 at 21:00", "artist": "Just Married"},
+        {"name": "Rock Blabber vol.2", "price": 14, "when": "Saturday, 20 August 2025 at 21:00", "artist": "Galactic Guitars, Spatial Drums"},
+        {"name": "Yet Another Techno Party", "price": 12, "when": "Friday, 26 August 2025 at 21:00", "artist": "Mr. Medical, Side Effects"}
+    ]
+}

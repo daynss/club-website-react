@@ -6,6 +6,7 @@ const NumberSelector = ({ qty, onQtyChange }) => (
     <input
       type="number"
       min="1"
+      max="100"
       id="quantity"
       name="quantity"
       value={qty}
